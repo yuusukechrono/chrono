@@ -7,35 +7,16 @@ class Player
          0:グー
          1:チョキ
          2:パー"
-    player_hand = gets.to_i
-    check = linear_search(player_hand)
-    if check == 1
-      puts("あなたが選んだのは#{@@janken[player_hand]}です。")
-      return player_hand
+    player_hand = gets.chomp
+
+    if player_hand == "0" || player_hand == "1" || player_hand == "2"
+      puts("あなたが選んだのは#{@@janken[player_hand.to_i]}です。")
+      return player_hand.to_i
     else
-      puts("0～2の数字を入力してください")
+      puts("0～2の数字を入力してください。")
       hand
     end
   end
-
-  def linear_search(value)
-    i = 0
-    numbers =[0,1,2]
-    # iが配列の個数を超えるまで繰り返し処理をする
-    while i < 3
-      # もしも、iのindexから出される配列の値が、「探したい数字」と一致していたら
-      if numbers[i] == value
-        # そのインデックスの値をreturnする
-        return 1
-      end
-      i += 1
-      # もしも、iのindexから出される配列の値が、「探したい数字」と一致していなかったら
-      # 次の数字をチェックするためにiの数字を+1する
-    end
-    return 0
-  end
-    # iが配列の個数を超えても探したい数字がなかったら、その配列の中に探したい数字がない
-    # ということなので、Noneを返す
 end
 
 class Enemy
@@ -55,6 +36,7 @@ class Janken
     elsif result == 1
       puts "相手の手は#{@@janken[enemy_hand]}です。あなたの負けです。"
     else
+      puts "相手の手は#{@@janken[enemy_hand]}です。あいこです。"
       player_aiko = Player.new
       enemy_aiko = Enemy.new
       janken_aiko = Janken.new
