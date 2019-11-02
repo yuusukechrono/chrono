@@ -15,7 +15,7 @@
         <input type="submit" name="send" >
       </form>
 
-      <% result = connection.exec("select weight, give_for from crops2;") %>
+      <% result = connection.exec("select weight, give_for from crops;") %>
       <% data = [] %>
 
       <% result.each do |record| %>

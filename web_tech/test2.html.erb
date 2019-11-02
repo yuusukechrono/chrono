@@ -8,7 +8,7 @@
     <% connection = PG::connect(dbname: "goya")%>
     <% connection.internal_encoding = "UTF-8"%>
 
-    <% result2 = connection.exec("select length, weight, quality, give_for from crops2 where give_for != '自家消費';") %>
+    <% result2 = connection.exec("select length, weight, quality, give_for from crops where give_for != '自家消費';") %>
     <% data2 = [] %>
 
     <% result2.each do |record| %>
@@ -22,7 +22,7 @@
     </form>
 
 
-    <% result3 = connection.exec("select length, weight, give_for from crops2 where quality = 'F';") %>
+    <% result3 = connection.exec("select length, weight, give_for from crops where quality = 'F';") %>
     <% data3 = [] %>
 
     <% result3.each do |record| %>
