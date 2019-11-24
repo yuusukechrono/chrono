@@ -1,0 +1,41 @@
+.contact{
+}
+
+.submit-center{
+  text-align:center;
+}
+
+input[type="text"]{
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+.contact tr{
+  height: 7rem;
+}
+
+.contact th{
+  width:150px;
+  text-align:right;
+  padding-right: 20px;
+}
+
+.contact td{
+  width: 480px;
+}
+
+
+.button{
+  background-color: green;
+  height: 55px;
+  width: 100px;
+  text-align:center;
+  font-size: 24px;
+}
+
+.button:hover{
+  opacity: 0.6;
+}

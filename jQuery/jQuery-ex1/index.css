@@ -1,0 +1,29 @@
+.tab{
+  list-style:none;
+  overflow:hidden;
+  margin: 0;
+}
+
+.tab li{
+  background:#ccc;
+  padding:5px 25px;
+  float:left;
+  margin-right:1px;
+}
+
+.tab li.select{
+  background:#eee;
+}
+
+.content{
+  list-stye:none;
+  margin:0;
+}
+
+.content li{
+  backgounr:#eee;
+}
+
+.hide{
+  display:none;
+}

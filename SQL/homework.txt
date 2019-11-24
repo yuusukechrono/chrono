@@ -1,0 +1,5 @@
+
+select count(*), division_name from members join divisions on members.division_id = divisions.division_id group by members.division_id, divisions.division_name;
+
+
+select division_name, count(*) from members join divisions on members.division_id = divisions.division_id group by members.division_id, divisions.division_name order by members.division_id asc;

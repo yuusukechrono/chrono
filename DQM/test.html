@@ -1,0 +1,38 @@
+<body>
+  <form>
+    <input type="text" name="" id="name"/>
+    <input  value="追加" id="btn"/> <!-- 送信 => 追加 -->
+  </form>
+  <h3>TODOリスト</h3> <!-- 追記 -->
+  <ul id="lists"></ul>　<!-- 追記 -->
+  <button type="button" id="deleteButton">削除する</button> <!-- 追記 -->
+  <script>
+    const lists = document.getElementById('lists'); //追記
+    const target = document.getElementById('btn');
+    target.addEventListener('click', function() {
+    const form = document.getElementById('name');
+    const list = document.createElement('li');
+    if (form.value == ""){
+      window.alert('TODOを入力してください。');
+    }
+    else{
+    list.textContent = form.value;
+    list.addEventListener('click', function(e){
+      const doneList = e.target;
+      doneList.style.textDecoration='Line-through';
+      doneList.style.color='gray';
+      doneList.style.fontStyle='italic';
+    }, false);
+    lists.appendChild(list);
+    form.value="";
+    }   },false);
+
+    const deleteButton = document.getElementById('deleteButton');
+    deleteButton.addEventListener('click', function() {
+    while (lists.firstChild) {
+     lists.removeChild(lists.firstChild);
+   }
+  },false);
+
+  </script>
+</body>
